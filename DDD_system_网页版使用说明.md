@@ -6,10 +6,10 @@
 
 确保你的项目文件夹中包含以下文件（这是 PWA 的核心）：
 
-- `DDD_system.html` (你的主程序)
+- `index.html 和 DDD_system.html` (你的主程序)
 - `manifest.json` (PWA 配置文件)
 - `sw.js` (Service Worker 文件)
-- `icon-192.png` 和 `icon-512.png` (图标)
+- `icons `(图标)
 
 **第二步：新建仓库** 登录后点右上角「+」→「New repository」：
 
