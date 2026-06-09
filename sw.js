@@ -1,12 +1,24 @@
-const CACHE_NAME = 'ddd-system-v1';
+const CACHE_NAME = 'ddd-system-v2';  // 改版本号，强制刷新旧缓存
 const urlsToCache = [
   './DDD_system.html',
-  './manifest.json'
-  // 若有其他CSS/JS文件，也请添加进来
+  './manifest.json',
+  './sw.js'
 ];
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache)));
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
+  );
+  self.skipWaiting(); // 立即激活新 SW
+});
+
+self.addEventListener('activate', event => {
+  // 清理旧版本缓存
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    )
+  );
 });
 
 self.addEventListener('fetch', event => {
