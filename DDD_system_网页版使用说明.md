@@ -35,7 +35,10 @@
 **第五步：等待2分钟** 刷新 Pages 页面，会出现一个网址，格式是：
 
 ```
-https://adamhtmei.github.io/yyyy_ddd_system/
+个人
+https://adamhtmei.github.io/YYYY_DDDSystem_WPA/DDD_system.html
+组织
+https://dlyyyy-dop.github.io/DDD/DDD_system.html
 ```
 
 ### 给 PWA 开发者的特别建议
